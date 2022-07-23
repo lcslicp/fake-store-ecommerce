@@ -9,13 +9,12 @@ const ShoppingCart = () => {
   const getProducts = JSON.parse(localStorage.getItem('products'));
 
   let totalAmount = getProducts
-    .map((product) => product.price)
-    .reduce((prev, curr) => prev + curr, '');
+    .map((product) => Number(product.price))
+    .reduce((prev, curr) => prev + curr, 0);
 
   const fetchAllProducts = () => {
     setProducts(getProducts);
-    console.log(getProducts);
-    setTotalPrice(totalAmount);
+    setTotalPrice(totalAmount.toFixed(2));
   };
 
   useEffect(() => {
