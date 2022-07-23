@@ -10,7 +10,7 @@ const ShoppingCart = () => {
 
   let totalAmount = getProducts
     .map((product) => product.price)
-    .reduce((prev, curr) => prev + curr, 0);
+    .reduce((prev, curr) => prev + curr, '');
 
   const fetchAllProducts = () => {
     setProducts(getProducts);
